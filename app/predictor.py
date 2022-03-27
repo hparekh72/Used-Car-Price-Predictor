@@ -14,9 +14,9 @@ class Predictor:
     scaler = StandardScaler()
 
     def __init__(self) -> None:
-        url='https://docs.google.com/spreadsheets/d/11FtA9l3Mov2HTfoseedSGJerFLrD9qHfkGJaVp3HLuA/edit?usp=sharing'
-        dwn_url='https://drive.google.com/uc?id=' + url.split('/')[-2]
-        self.data = pd.read_csv(dwn_url, thousands=',')
+        url = 'https://drive.google.com/file/d/1AgahN_SPUj2rd77hVI_RyrY04gPb5UPA/view?usp=sharing'
+        path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
+        self.data = pd.read_csv(path, thousands=',')
         self.data[:] = self.data.dropna()
         self.preprocess()
         self.predictt()
