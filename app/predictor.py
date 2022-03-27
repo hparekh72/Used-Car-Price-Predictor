@@ -14,8 +14,7 @@ class Predictor:
     scaler = StandardScaler()
 
     def __init__(self) -> None:
-        self.data = pd.read_csv(
-            r'C:\Users\Hitanshu Parekh\Downloads\ezyZip\Cars\app\cars.csv', thousands=',')
+        self.data = pd.read_csv('cars.csv', thousands=',')
         self.data[:] = self.data.dropna()
         self.preprocess()
         self.predictt()
